@@ -7,8 +7,9 @@ using System.Windows.Forms;
 
 namespace AvcolForms.Client
 {
-    // At the moment, I'm temporarily storing generic form data in these objects.
-    // This will eventually be written to a file as an email attachment.
+    // This object stores basic form entries inside a key/value dictionary.
+    // NOTE TO SELF: Try not to introduce memory leaks when the user selects multiple forms.
+    // The garbage collector might not realize the object is not in use.
     public class FormData
     {
         public Dictionary<string, string> FormattedData;
@@ -21,6 +22,7 @@ namespace AvcolForms.Client
                 FormattedData.Add(key, value);
             }
             else FormattedData[key] = value;
+            if (value == "") FormattedData.Remove(key);
         }
 
         public FormData(Form form)
