@@ -12,6 +12,7 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -24,7 +25,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -116,10 +116,10 @@
     <Compile Include="MainWindow.Designer.cs">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="PrinterRequestForm.cs">
+    <Compile Include="Forms\PrinterRequestForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PrinterRequestForm.Designer.cs">
+    <Compile Include="Forms\PrinterRequestForm.Designer.cs">
       <DependentUpon>PrinterRequestForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -127,7 +127,7 @@
     <EmbeddedResource Include="MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PrinterRequestForm.resx">
+    <EmbeddedResource Include="Forms\PrinterRequestForm.resx">
       <DependentUpon>PrinterRequestForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

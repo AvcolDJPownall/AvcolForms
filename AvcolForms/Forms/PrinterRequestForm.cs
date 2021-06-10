@@ -64,7 +64,7 @@ namespace AvcolForms
             if (!RequiredKeys.Any() || RequiredKeys.All(field => data.ContainsKey(field)))
             {
                 error_text.Text = "";
-                EmailFactory.SendToDepartment("ac000000@avcol.school.nz", FormData, DataExporter.ExportToExcel(FormData));
+                EmailFactory.SendToDepartment("ac107151@avcol.school.nz", FormData, DataExporter.ExportToExcel(FormData));
             }
             else
             {
