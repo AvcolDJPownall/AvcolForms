@@ -42,6 +42,7 @@ namespace AvcolForms
             this.label_department = new System.Windows.Forms.Label();
             this.tb_department = new System.Windows.Forms.TextBox();
             this.button_submit = new System.Windows.Forms.Button();
+            this.error_text = new System.Windows.Forms.Label();
             this.group_chargeto.SuspendLayout();
             this.panel_depcharge.SuspendLayout();
             this.SuspendLayout();
@@ -163,6 +164,7 @@ namespace AvcolForms
             this.tb_department.Name = "tb_department";
             this.tb_department.Size = new System.Drawing.Size(100, 20);
             this.tb_department.TabIndex = 10;
+            this.tb_department.TextChanged += new System.EventHandler(this.tb_department_TextChanged);
             // 
             // button_submit
             // 
@@ -174,11 +176,23 @@ namespace AvcolForms
             this.button_submit.UseVisualStyleBackColor = true;
             this.button_submit.Click += new System.EventHandler(this.button_submit_Click);
             // 
+            // error_text
+            // 
+            this.error_text.AutoSize = true;
+            this.error_text.BackColor = System.Drawing.SystemColors.Control;
+            this.error_text.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.error_text.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.error_text.Location = new System.Drawing.Point(474, 715);
+            this.error_text.Name = "error_text";
+            this.error_text.Size = new System.Drawing.Size(0, 20);
+            this.error_text.TabIndex = 13;
+            // 
             // PrinterRequestForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 768);
+            this.Controls.Add(this.error_text);
             this.Controls.Add(this.button_submit);
             this.Controls.Add(this.label_department);
             this.Controls.Add(this.tb_department);
@@ -190,7 +204,7 @@ namespace AvcolForms
             this.Controls.Add(this.tb_name);
             this.Controls.Add(this.label_title);
             this.Name = "PrinterRequestForm";
-            this.Text = "Print Request Form";
+            this.Text = "W";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.group_chargeto.ResumeLayout(false);
             this.group_chargeto.PerformLayout();
@@ -216,6 +230,7 @@ namespace AvcolForms
         private System.Windows.Forms.Label label_department;
         private System.Windows.Forms.TextBox tb_department;
         private System.Windows.Forms.Button button_submit;
+        private System.Windows.Forms.Label error_text;
     }
 }
 
