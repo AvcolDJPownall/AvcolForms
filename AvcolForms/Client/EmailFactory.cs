@@ -57,11 +57,12 @@ namespace AvcolForms.Client
             message.Body += "<img width=\"128\" height=\"128\" src=\"cid:logohead\"/><h1>Avcol Forms</h1>\n<p>A user has submitted a digital copy of the '" + form.Name + "' Form. Please see the attachment for their submission.</p>\n\n";
             message.Body += DataExporter.GenerateHTMLTable(form);
 
-            //string filename = form.Name + from_address.Replace("@avcol.school.nz", "_") + ".xlsx"; // Use dynamic form names, file extension may change later
-
+            // Attach text file
+            string filename = form.Name + from_address.Replace("@avcol.school.nz", "_") + ".txt";
+            message.Attachments.Add(new Attachment(attachment, filename));
 
             smtpClient.Send(message);
-            //attachment.Close();
+            attachment.Close();
         }
     }
 }
