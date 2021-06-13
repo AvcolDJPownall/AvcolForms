@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -22,6 +23,11 @@ namespace AvcolForms
         {
             InitializeComponent();
             Application.Run(new PrinterRequestForm());
+
+            Image logoimg = img_avcolformslogo.Image;
+            Assembly assembly = Assembly.GetExecutingAssembly();
+            logoimg = Image.FromStream(assembly.GetManifestResourceStream("AvcolForms.Resources.avcolforms_logo.png"));
+
         }
 
         private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
@@ -32,6 +38,11 @@ namespace AvcolForms
         }
 
         private void form_list_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void text_logo_Click(object sender, EventArgs e)
         {
 
         }
