@@ -29,29 +29,17 @@ namespace AvcolForms
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("Printer Request Form");
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
-            this.form_list = new System.Windows.Forms.ListView();
             this.img_avcolformslogo = new System.Windows.Forms.PictureBox();
             this.logo_container = new System.Windows.Forms.Panel();
             this.text_logo = new System.Windows.Forms.Label();
+            this.panel_accountype = new System.Windows.Forms.Panel();
+            this.btn_teacher = new System.Windows.Forms.Button();
+            this.btn_student = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.img_avcolformslogo)).BeginInit();
             this.logo_container.SuspendLayout();
+            this.panel_accountype.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // form_list
-            // 
-            this.form_list.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.form_list.HideSelection = false;
-            this.form_list.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem1});
-            this.form_list.Location = new System.Drawing.Point(138, 236);
-            this.form_list.Name = "form_list";
-            this.form_list.Size = new System.Drawing.Size(191, 97);
-            this.form_list.TabIndex = 1;
-            this.form_list.UseCompatibleStateImageBehavior = false;
-            this.form_list.View = System.Windows.Forms.View.SmallIcon;
-            this.form_list.SelectedIndexChanged += new System.EventHandler(this.form_list_SelectedIndexChanged);
             // 
             // img_avcolformslogo
             // 
@@ -83,27 +71,66 @@ namespace AvcolForms
             this.text_logo.Text = "Avcol Forms";
             this.text_logo.Click += new System.EventHandler(this.text_logo_Click);
             // 
+            // panel_accountype
+            // 
+            this.panel_accountype.Controls.Add(this.btn_teacher);
+            this.panel_accountype.Controls.Add(this.btn_student);
+            this.panel_accountype.Location = new System.Drawing.Point(91, 182);
+            this.panel_accountype.Name = "panel_accountype";
+            this.panel_accountype.Size = new System.Drawing.Size(581, 213);
+            this.panel_accountype.TabIndex = 4;
+            // 
+            // btn_teacher
+            // 
+            this.btn_teacher.BackColor = System.Drawing.SystemColors.Window;
+            this.btn_teacher.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_teacher.BackgroundImage")));
+            this.btn_teacher.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_teacher.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_teacher.Location = new System.Drawing.Point(394, 55);
+            this.btn_teacher.Name = "btn_teacher";
+            this.btn_teacher.Size = new System.Drawing.Size(130, 137);
+            this.btn_teacher.TabIndex = 1;
+            this.btn_teacher.Text = "Teacher";
+            this.btn_teacher.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btn_teacher.UseVisualStyleBackColor = false;
+            // 
+            // btn_student
+            // 
+            this.btn_student.BackColor = System.Drawing.SystemColors.Window;
+            this.btn_student.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_student.BackgroundImage")));
+            this.btn_student.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_student.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_student.Location = new System.Drawing.Point(80, 55);
+            this.btn_student.Name = "btn_student";
+            this.btn_student.Size = new System.Drawing.Size(130, 137);
+            this.btn_student.TabIndex = 0;
+            this.btn_student.Text = "Student";
+            this.btn_student.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btn_student.UseVisualStyleBackColor = false;
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.panel_accountype);
             this.Controls.Add(this.logo_container);
-            this.Controls.Add(this.form_list);
             this.Name = "MainWindow";
             this.Text = "MainWindow";
             ((System.ComponentModel.ISupportInitialize)(this.img_avcolformslogo)).EndInit();
             this.logo_container.ResumeLayout(false);
             this.logo_container.PerformLayout();
+            this.panel_accountype.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.ListView form_list;
         private System.Windows.Forms.PictureBox img_avcolformslogo;
         private System.Windows.Forms.Panel logo_container;
         private System.Windows.Forms.Label text_logo;
+        private System.Windows.Forms.Panel panel_accountype;
+        private System.Windows.Forms.Button btn_student;
+        private System.Windows.Forms.Button btn_teacher;
     }
 }
