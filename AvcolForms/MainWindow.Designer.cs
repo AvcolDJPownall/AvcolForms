@@ -93,6 +93,7 @@ namespace AvcolForms
             this.btn_teacher.Text = "Teacher";
             this.btn_teacher.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_teacher.UseVisualStyleBackColor = false;
+            this.btn_teacher.Click += new System.EventHandler(this.btn_teacher_Click);
             // 
             // btn_student
             // 
@@ -107,6 +108,7 @@ namespace AvcolForms
             this.btn_student.Text = "Student";
             this.btn_student.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_student.UseVisualStyleBackColor = false;
+            this.btn_student.Click += new System.EventHandler(this.btn_student_Click);
             // 
             // MainWindow
             // 
@@ -116,7 +118,7 @@ namespace AvcolForms
             this.Controls.Add(this.panel_accountype);
             this.Controls.Add(this.logo_container);
             this.Name = "MainWindow";
-            this.Text = "MainWindow";
+            this.Text = "Avcol Forms";
             ((System.ComponentModel.ISupportInitialize)(this.img_avcolformslogo)).EndInit();
             this.logo_container.ResumeLayout(false);
             this.logo_container.PerformLayout();

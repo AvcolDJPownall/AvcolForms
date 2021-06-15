@@ -8,6 +8,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using AvcolForms.Pages;
 
 namespace AvcolForms
 {
@@ -22,7 +23,6 @@ namespace AvcolForms
         public MainWindow()
         {
             InitializeComponent();
-            Application.Run(new PrinterRequestForm());
 
             Image logoimg = img_avcolformslogo.Image;
             Assembly assembly = Assembly.GetExecutingAssembly();
@@ -45,6 +45,20 @@ namespace AvcolForms
         private void text_logo_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btn_student_Click(object sender, EventArgs e)
+        {
+            Form browser = new FormBrowser(FormBrowser.AccountType.Student);
+            browser.Show();
+            this.Hide();
+        }
+
+        private void btn_teacher_Click(object sender, EventArgs e)
+        {
+            Form browser = new FormBrowser(FormBrowser.AccountType.Teacher);
+            browser.Show(this);
+            this.Hide();
         }
     }
 }

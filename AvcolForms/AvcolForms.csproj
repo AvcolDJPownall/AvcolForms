@@ -122,6 +122,12 @@
     <Compile Include="Forms\PrinterRequestForm.Designer.cs">
       <DependentUpon>PrinterRequestForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pages\FormBrowser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\FormBrowser.Designer.cs">
+      <DependentUpon>FormBrowser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="MainWindow.resx">
@@ -130,6 +136,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\PrinterRequestForm.resx">
       <DependentUpon>PrinterRequestForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\FormBrowser.resx">
+      <DependentUpon>FormBrowser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -204,5 +213,6 @@
   <ItemGroup>
     <EmbeddedResource Include="Resources\icon_teacher.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
