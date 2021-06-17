@@ -110,6 +110,7 @@
     <Compile Include="Client\DataExporter.cs" />
     <Compile Include="Client\EmailFactory.cs" />
     <Compile Include="Client\FormData.cs" />
+    <Compile Include="Forms\FormManager.cs" />
     <Compile Include="MainWindow.cs">
       <SubType>Form</SubType>
     </Compile>

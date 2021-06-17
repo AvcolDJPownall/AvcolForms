@@ -29,30 +29,58 @@ namespace AvcolForms.Pages
         /// </summary>
         private void InitializeComponent()
         {
-            this.treeView1 = new System.Windows.Forms.TreeView();
+            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Select a form");
+            this.form_treelist = new System.Windows.Forms.TreeView();
+            this.btn_back = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // treeView1
+            // form_treelist
             // 
-            this.treeView1.Location = new System.Drawing.Point(86, 89);
-            this.treeView1.Name = "treeView1";
-            this.treeView1.Size = new System.Drawing.Size(121, 97);
-            this.treeView1.TabIndex = 0;
+            this.form_treelist.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.form_treelist.Indent = 15;
+            this.form_treelist.ItemHeight = 20;
+            this.form_treelist.Location = new System.Drawing.Point(107, 137);
+            this.form_treelist.Name = "form_treelist";
+            treeNode5.Name = "ph_text";
+            treeNode5.Text = "Select a form";
+            this.form_treelist.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
+            treeNode5});
+            this.form_treelist.Size = new System.Drawing.Size(409, 249);
+            this.form_treelist.TabIndex = 0;
+            this.form_treelist.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.form_treelist_AfterSelect);
+            // 
+            // btn_back
+            // 
+            this.btn_back.Location = new System.Drawing.Point(713, 12);
+            this.btn_back.Name = "btn_back";
+            this.btn_back.Size = new System.Drawing.Size(75, 23);
+            this.btn_back.TabIndex = 1;
+            this.btn_back.Text = "Back";
+            this.btn_back.UseVisualStyleBackColor = true;
+            this.btn_back.Click += new System.EventHandler(this.btn_back_Click);
             // 
             // FormBrowser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.treeView1);
+            this.Controls.Add(this.btn_back);
+            this.Controls.Add(this.form_treelist);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FormBrowser";
+            this.ShowIcon = false;
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Text = "Avcol Forms - Browser";
+            this.TopMost = true;
+            this.Load += new System.EventHandler(this.FormBrowser_Load);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TreeView treeView1;
+        private System.Windows.Forms.TreeView form_treelist;
+        private System.Windows.Forms.Button btn_back;
     }
 }

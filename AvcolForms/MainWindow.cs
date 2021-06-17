@@ -23,7 +23,7 @@ namespace AvcolForms
         public MainWindow()
         {
             InitializeComponent();
-
+            this.IsMdiContainer = true;
             Image logoimg = img_avcolformslogo.Image;
             Assembly assembly = Assembly.GetExecutingAssembly();
             logoimg = Image.FromStream(assembly.GetManifestResourceStream("AvcolForms.Resources.avcolforms_logo.png"));
@@ -50,14 +50,18 @@ namespace AvcolForms
         private void btn_student_Click(object sender, EventArgs e)
         {
             Form browser = new FormBrowser(FormBrowser.AccountType.Student);
+            browser.MdiParent = this;
+            browser.WindowState = FormWindowState.Maximized;
             browser.Show();
-            this.Hide();
+            browser.BringToFront();
         }
 
         private void btn_teacher_Click(object sender, EventArgs e)
         {
             Form browser = new FormBrowser(FormBrowser.AccountType.Teacher);
-            browser.Show(this);
+            browser.MdiParent = this;
+            browser.WindowState = FormWindowState.Maximized;
+            browser.Show();
             this.Hide();
         }
     }
