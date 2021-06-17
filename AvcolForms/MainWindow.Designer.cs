@@ -36,9 +36,11 @@ namespace AvcolForms
             this.panel_accountype = new System.Windows.Forms.Panel();
             this.btn_teacher = new System.Windows.Forms.Button();
             this.btn_student = new System.Windows.Forms.Button();
+            this.panel_initalscreen = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.img_avcolformslogo)).BeginInit();
             this.logo_container.SuspendLayout();
             this.panel_accountype.SuspendLayout();
+            this.panel_initalscreen.SuspendLayout();
             this.SuspendLayout();
             // 
             // img_avcolformslogo
@@ -55,7 +57,7 @@ namespace AvcolForms
             // 
             this.logo_container.Controls.Add(this.text_logo);
             this.logo_container.Controls.Add(this.img_avcolformslogo);
-            this.logo_container.Location = new System.Drawing.Point(88, 12);
+            this.logo_container.Location = new System.Drawing.Point(90, 12);
             this.logo_container.Name = "logo_container";
             this.logo_container.Size = new System.Drawing.Size(584, 150);
             this.logo_container.TabIndex = 3;
@@ -75,7 +77,7 @@ namespace AvcolForms
             // 
             this.panel_accountype.Controls.Add(this.btn_teacher);
             this.panel_accountype.Controls.Add(this.btn_student);
-            this.panel_accountype.Location = new System.Drawing.Point(91, 182);
+            this.panel_accountype.Location = new System.Drawing.Point(93, 182);
             this.panel_accountype.Name = "panel_accountype";
             this.panel_accountype.Size = new System.Drawing.Size(581, 213);
             this.panel_accountype.TabIndex = 4;
@@ -110,19 +112,29 @@ namespace AvcolForms
             this.btn_student.UseVisualStyleBackColor = false;
             this.btn_student.Click += new System.EventHandler(this.btn_student_Click);
             // 
+            // panel_initalscreen
+            // 
+            this.panel_initalscreen.Controls.Add(this.panel_accountype);
+            this.panel_initalscreen.Controls.Add(this.logo_container);
+            this.panel_initalscreen.Location = new System.Drawing.Point(-2, 0);
+            this.panel_initalscreen.Name = "panel_initalscreen";
+            this.panel_initalscreen.Size = new System.Drawing.Size(805, 454);
+            this.panel_initalscreen.TabIndex = 6;
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.panel_accountype);
-            this.Controls.Add(this.logo_container);
+            this.Controls.Add(this.panel_initalscreen);
+            this.IsMdiContainer = true;
             this.Name = "MainWindow";
             this.Text = "Avcol Forms";
             ((System.ComponentModel.ISupportInitialize)(this.img_avcolformslogo)).EndInit();
             this.logo_container.ResumeLayout(false);
             this.logo_container.PerformLayout();
             this.panel_accountype.ResumeLayout(false);
+            this.panel_initalscreen.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -134,5 +146,6 @@ namespace AvcolForms
         private System.Windows.Forms.Panel panel_accountype;
         private System.Windows.Forms.Button btn_student;
         private System.Windows.Forms.Button btn_teacher;
+        private System.Windows.Forms.Panel panel_initalscreen;
     }
 }

@@ -29,6 +29,12 @@ namespace AvcolForms
             logoimg = Image.FromStream(assembly.GetManifestResourceStream("AvcolForms.Resources.avcolforms_logo.png"));
 
         }
+        
+        // All elements are private, so we use a public method.
+        public void SetHomeVisibility(bool isVisible) 
+        {
+            panel_initalscreen.Visible = isVisible;
+        }
 
         private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
         {
@@ -51,18 +57,18 @@ namespace AvcolForms
         {
             Form browser = new FormBrowser(FormBrowser.AccountType.Student);
             browser.MdiParent = this;
-            browser.WindowState = FormWindowState.Maximized;
+            panel_initalscreen.Visible = false;
+            //browser.WindowState = FormWindowState.Maximized;
             browser.Show();
-            browser.BringToFront();
         }
 
         private void btn_teacher_Click(object sender, EventArgs e)
         {
             Form browser = new FormBrowser(FormBrowser.AccountType.Teacher);
             browser.MdiParent = this;
+            panel_initalscreen.Visible = false;
             browser.WindowState = FormWindowState.Maximized;
             browser.Show();
-            this.Hide();
         }
     }
 }

@@ -46,9 +46,11 @@ namespace AvcolForms.Pages
             this.Focus();
         }
 
+        // NOTE: If we use MDI for the actual forms, we'll need to implement a back button heirarchy to keep track of the pages.
         private void btn_back_Click(object sender, EventArgs e)
         {
-            this.MdiParent.Show();
+            var parent = (MainWindow)this.MdiParent;
+            parent.SetHomeVisibility(true);
             this.Close();
         }
     }
