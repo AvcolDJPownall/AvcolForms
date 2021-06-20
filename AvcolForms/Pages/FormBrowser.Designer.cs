@@ -29,7 +29,7 @@ namespace AvcolForms.Pages
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Select a form");
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Select a form");
             this.form_treelist = new System.Windows.Forms.TreeView();
             this.btn_back = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -41,10 +41,10 @@ namespace AvcolForms.Pages
             this.form_treelist.ItemHeight = 20;
             this.form_treelist.Location = new System.Drawing.Point(107, 137);
             this.form_treelist.Name = "form_treelist";
-            treeNode3.Name = "ph_text";
-            treeNode3.Text = "Select a form";
+            treeNode2.Name = "ph_text";
+            treeNode2.Text = "Select a form";
             this.form_treelist.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode3});
+            treeNode2});
             this.form_treelist.Size = new System.Drawing.Size(409, 249);
             this.form_treelist.TabIndex = 0;
             this.form_treelist.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.form_treelist_AfterSelect);
@@ -63,6 +63,7 @@ namespace AvcolForms.Pages
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btn_back);
             this.Controls.Add(this.form_treelist);
@@ -70,7 +71,7 @@ namespace AvcolForms.Pages
             this.Name = "FormBrowser";
             this.ShowIcon = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Avcol Forms - Browser";
             this.TopMost = true;
             this.Load += new System.EventHandler(this.FormBrowser_Load);

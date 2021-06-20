@@ -39,11 +39,12 @@ namespace AvcolForms.Pages
                 if (type.Name == form_treelist.SelectedNode.Text)
                 {
                     Form newform = (Form)Activator.CreateInstance(type);
-                    //this.Hide();
+                    newform.Show();
+                    newform.Focus();
+                    return;
                 }
                 
             }
-            this.Focus();
         }
 
         // NOTE: If we use MDI for the actual forms, we'll need to implement a back button heirarchy to keep track of the pages.

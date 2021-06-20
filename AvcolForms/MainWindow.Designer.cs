@@ -114,6 +114,7 @@ namespace AvcolForms
             // 
             // panel_initalscreen
             // 
+            this.panel_initalscreen.AutoSize = true;
             this.panel_initalscreen.Controls.Add(this.panel_accountype);
             this.panel_initalscreen.Controls.Add(this.logo_container);
             this.panel_initalscreen.Location = new System.Drawing.Point(-2, 0);
@@ -125,6 +126,7 @@ namespace AvcolForms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.panel_initalscreen);
             this.IsMdiContainer = true;
@@ -136,6 +138,7 @@ namespace AvcolForms
             this.panel_accountype.ResumeLayout(false);
             this.panel_initalscreen.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
