@@ -23,17 +23,17 @@ namespace AvcolForms.Pages
         private void FormBrowser_Load(object sender, EventArgs e)
         {
             List<Type> form_tlist = UserType == AccountType.Student ? FormManager.GetStudentForms() : null; // Implement teacher stuff later!
+
+
+            TreeNode parentnode = form_treelist.Nodes[0];
             foreach (var node in form_tlist)
             {
-                form_treelist.Nodes.Add(node.Name);
+                parentnode.Nodes.Add(node.Name);
             }
-
+            parentnode.Expand();
         }
-
-        private void form_treelist_AfterSelect(object sender, TreeViewEventArgs e)
+        private void OnSelectNodeEvent(object sender, EventArgs e) 
         {
-
-
             foreach (Type type in FormManager.GetStudentForms())
             {
                 if (type.Name == form_treelist.SelectedNode.Text)
@@ -43,7 +43,6 @@ namespace AvcolForms.Pages
                     newform.Focus();
                     return;
                 }
-                
             }
         }
 
