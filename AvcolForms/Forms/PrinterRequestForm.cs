@@ -45,11 +45,6 @@ namespace AvcolForms
             FormData.ModifyAttribute("Charge to", radio_chargeto_personal.Checked ? "Personal balance" : "Department");
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void chargeToDep_CheckedChanged(object sender, EventArgs e)
         {
             // Show additional entries if charging to a department

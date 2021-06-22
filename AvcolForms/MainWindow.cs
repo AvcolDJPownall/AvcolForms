@@ -24,10 +24,10 @@ namespace AvcolForms
         {
             InitializeComponent();
             this.IsMdiContainer = true;
+
             Image logoimg = img_avcolformslogo.Image;
             Assembly assembly = Assembly.GetExecutingAssembly();
             logoimg = Image.FromStream(assembly.GetManifestResourceStream("AvcolForms.Resources.avcolforms_logo.png"));
-
         }
         
         // All elements are private, so we use a public method.
@@ -36,29 +36,11 @@ namespace AvcolForms
             panel_initalscreen.Visible = isVisible;
         }
 
-        private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
-        {
-            int index = e.Node.Index;
-            //Application.Run(AvaliableForms[index]);
-
-        }
-
-        private void form_list_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void text_logo_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btn_student_Click(object sender, EventArgs e)
         {
             Form browser = new FormBrowser(FormBrowser.AccountType.Student);
             browser.MdiParent = this;
             panel_initalscreen.Visible = false;
-            //browser.WindowState = FormWindowState.Maximized;
             browser.Show();
         }
 
@@ -67,7 +49,6 @@ namespace AvcolForms
             Form browser = new FormBrowser(FormBrowser.AccountType.Teacher);
             browser.MdiParent = this;
             panel_initalscreen.Visible = false;
-            browser.WindowState = FormWindowState.Maximized;
             browser.Show();
         }
     }

@@ -71,7 +71,6 @@ namespace AvcolForms
             this.text_logo.Size = new System.Drawing.Size(427, 79);
             this.text_logo.TabIndex = 4;
             this.text_logo.Text = "Avcol Forms";
-            this.text_logo.Click += new System.EventHandler(this.text_logo_Click);
             // 
             // panel_accountype
             // 
