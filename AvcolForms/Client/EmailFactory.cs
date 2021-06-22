@@ -27,42 +27,56 @@ namespace AvcolForms.Client
         {
 
             // User credentials
-            string from_address = "";
-            string authpassword = Encoding.UTF8.GetString(Convert.FromBase64String("")); // This obviously won't be defined in plain text, .NET is far too easy to decompile
+            try
+            {
+                string from_address = "";
+                string authpassword = Encoding.UTF8.GetString(Convert.FromBase64String("")); // This obviously won't be defined in plain text, .NET is far too easy to decompile
 
-            // Define SMTP Server parameters
-            // These are placeholders, currently waiting on approval from the IT department
-            SmtpClient smtpClient = new SmtpClient("smtp.gmail.com", 587);
-            smtpClient.EnableSsl = true;
-            smtpClient.DeliveryMethod = SmtpDeliveryMethod.Network;
-            smtpClient.UseDefaultCredentials = false;
-            smtpClient.Credentials = new NetworkCredential(from_address, authpassword);
+                // Define SMTP Server parameters
+                // These are placeholders, currently waiting on approval from the IT department
+                SmtpClient smtpClient = new SmtpClient("smtp.gmail.com", 587);
+                smtpClient.EnableSsl = true;
+                smtpClient.DeliveryMethod = SmtpDeliveryMethod.Network;
+                smtpClient.UseDefaultCredentials = false;
+                smtpClient.Credentials = new NetworkCredential(from_address, authpassword);
 
-            // Construct message
-            MailMessage message = new MailMessage();
-            foreach (string to_usr in addresses) message.To.Add(to_usr);
-            message.From = new MailAddress(from_address);
-            message.Subject = "Form Submission - " + form.Name;
+                // Construct message
+                MailMessage message = new MailMessage();
+                foreach (string to_usr in addresses) message.To.Add(to_usr);
+                message.From = new MailAddress(from_address);
+                message.Subject = "Form Submission - " + form.Name;
 
 
-            // Image attachments, might want to give it its own method sometime later
-            Assembly assembly = Assembly.GetExecutingAssembly();
-            Attachment headimage = new Attachment(assembly.GetManifestResourceStream("AvcolForms.Resources.avcolforms_logo.png"), "headimg.png");
-            headimage.ContentId = "logohead";
-            message.Attachments.Add(headimage);
+                // Image attachments, might want to give it its own method sometime later
+                Assembly assembly = Assembly.GetExecutingAssembly();
+                Attachment headimage = new Attachment(assembly.GetManifestResourceStream("AvcolForms.Resources.avcolforms_logo.png"), "headimg.png");
+                headimage.ContentId = "logohead";
+                message.Attachments.Add(headimage);
 
-            // HTML Formatting
-            message.IsBodyHtml = true;
-            message.Body = GetHTMLStyle();
-            message.Body += "<img width=\"128\" height=\"128\" src=\"cid:logohead\"/><h1>Avcol Forms</h1>\n<p>A user has submitted a digital copy of the '" + form.Name + "' Form. Please see the attachment for their submission.</p>\n\n";
-            message.Body += DataExporter.GenerateHTMLTable(form);
+                // HTML Formatting
+                message.IsBodyHtml = true;
+                message.Body = GetHTMLStyle();
+                message.Body += "<img width=\"128\" height=\"128\" src=\"cid:logohead\"/><h1>Avcol Forms</h1>\n<p>A user has submitted a digital copy of the '" + form.Name + "' Form. Please see the attachment for their submission.</p>\n\n";
+                message.Body += DataExporter.GenerateHTMLTable(form);
 
-            // Attach text file
-            string filename = form.Name + from_address.Replace("@avcol.school.nz", "_") + ".txt";
-            message.Attachments.Add(new Attachment(attachment, filename));
+                // Attach text file
+                string filename = form.Name + from_address.Replace("@avcol.school.nz", "_") + ".txt";
+                message.Attachments.Add(new Attachment(attachment, filename));
 
-            smtpClient.Send(message);
-            attachment.Close();
+                smtpClient.Send(message);
+                attachment.Close();
+            }
+            catch (Exception error)
+            {
+                string message = error.Message; // Default 'generic' error text
+
+                if (error is SmtpException) message = "Unable to connect to the mail server. Check that you are connected to the internet.";
+                if (error is SmtpFailedRecipientException) message = "One or more recipients failed to receive the form data.";
+
+
+                MessageBox.Show("An error occured sending your submission:\n" + message, "Error");
+                throw;
+            }
         }
     }
 }
