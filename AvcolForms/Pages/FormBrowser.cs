@@ -13,17 +13,17 @@ namespace AvcolForms.Pages
 {
     public partial class FormBrowser : Form
     {
-        public enum AccountType { Student, Teacher };
+        public enum AccountType { Student, Teacher, Other };
         private AccountType UserType;
         public FormBrowser(AccountType type)
         {
+            this.UserType = type;
             InitializeComponent();
         }
 
         private void FormBrowser_Load(object sender, EventArgs e)
         {
-            List<Type> form_tlist = UserType == AccountType.Student ? FormManager.GetStudentForms() : null; // Implement teacher stuff later!
-
+            List<Type> form_tlist = FormManager.GetUserForms(UserType);
 
             TreeNode parentnode = form_treelist.Nodes[0];
             foreach (var node in form_tlist)
@@ -34,7 +34,7 @@ namespace AvcolForms.Pages
         }
         private void OnSelectNodeEvent(object sender, EventArgs e) 
         {
-            foreach (Type type in FormManager.GetStudentForms())
+            foreach (Type type in FormManager.GetUserForms(UserType))
             {
                 if (type.Name == form_treelist.SelectedNode.Text)
                 {

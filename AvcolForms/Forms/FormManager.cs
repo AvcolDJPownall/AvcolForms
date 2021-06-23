@@ -4,27 +4,43 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using AvcolForms.Pages;
 
 namespace AvcolForms.Forms
 {
     class FormManager
     {
-        public static List<Type> GetStudentForms()
+
+        internal static ICollection<Type> _StudentForms = new List<Type>()
+        {
+            // Add type references to student forms here.
+        };
+
+        internal static ICollection<Type> _TeacherForms = new List<Type>()
+        {
+            // Add type references to teacher forms here.
+            typeof(PrinterRequestForm)
+        };
+
+        public static List<Type> GetUserForms(FormBrowser.AccountType usertype)
         {
 
             List<Type> form_list = new List<Type>();
+            System.Type[] userForms = { };
 
-            // New forms are defined here.
-            System.Type[] formList =
+            if (usertype == FormBrowser.AccountType.Student)
             {
-                typeof(PrinterRequestForm)
-            };
+                userForms = _StudentForms.ToArray();
+            }
+            if (usertype == FormBrowser.AccountType.Teacher)
+            {
+                userForms = _TeacherForms.ToArray();
+            }
             
-            // Add all valid forms
-            form_list.AddRange(formList.Where(form_t => form_t.IsSubclassOf(typeof(Form))));
+            // Add all valid forms to list
+            form_list.AddRange(userForms.Where(form_t => form_t.IsSubclassOf(typeof(Form))));
 
             return form_list;
         }
-
     }
 }
