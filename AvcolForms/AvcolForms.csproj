@@ -109,18 +109,18 @@
   <ItemGroup>
     <Compile Include="Client\DataExporter.cs" />
     <Compile Include="Client\EmailFactory.cs" />
-    <Compile Include="Client\FormData.cs" />
-    <Compile Include="Forms\FormManager.cs" />
-    <Compile Include="MainWindow.cs">
+    <Compile Include="Client\Forms\FormData.cs" />
+    <Compile Include="Client\Forms\FormManager.cs" />
+    <Compile Include="Pages\MainWindow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainWindow.Designer.cs">
+    <Compile Include="Pages\MainWindow.Designer.cs">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\PrinterRequestForm.cs">
+    <Compile Include="Pages\Forms\PrinterRequestForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\PrinterRequestForm.Designer.cs">
+    <Compile Include="Pages\Forms\PrinterRequestForm.Designer.cs">
       <DependentUpon>PrinterRequestForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Pages\FormBrowser.cs">
@@ -131,11 +131,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="MainWindow.resx">
+    <EmbeddedResource Include="Pages\MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\PrinterRequestForm.resx">
+    <EmbeddedResource Include="Pages\Forms\PrinterRequestForm.resx">
       <DependentUpon>PrinterRequestForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\FormBrowser.resx">
