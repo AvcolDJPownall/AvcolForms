@@ -21,34 +21,56 @@ namespace AvcolForms.Pages
             InitializeComponent();
             FormData = new FormData(this);
 
-            string[] req_fields = { "Name", "Staff Code", "Department", "Charge to" };
+            string[] req_fields = { "First Name", "Last Name", "Email", "Home Room", "Year Level" };
             RequiredKeys.AddRange(req_fields);
         }
 
         private void name_TextChanged(object sender, EventArgs e)
         {
-            FormData.ModifyAttribute("Name", tb_name.Text);
+            FormData.ModifyAttribute("First Name", tb_name.Text);
         }
 
-        private void staffcode_TextChanged(object sender, EventArgs e)
+        private void lastname_TextChanged(object sender, EventArgs e)
         {
-            FormData.ModifyAttribute("Staff Code", tb_homeroom.Text);
+            FormData.ModifyAttribute("Last Name", tb_lname.Text);
         }
 
-        private void tb_department_TextChanged(object sender, EventArgs e)
+        private void homeroom_TextChanged(object sender, EventArgs e)
         {
-            FormData.ModifyAttribute("Department", tb_lname.Text);
+            FormData.ModifyAttribute("Home Room", tb_homeroom.Text);
         }
 
-        private void chargeToPer_CheckedChanged(object sender, EventArgs e)
+        private void tb_email_TextChanged(object sender, EventArgs e)
         {
-            FormData.ModifyAttribute("Charge to", radio_yr_9.Checked ? "Personal balance" : "Department");
+            FormData.ModifyAttribute("Email", tb_email.Text);
         }
 
-        private void chargeToDep_CheckedChanged(object sender, EventArgs e)
+        private void tb_phone_TextChanged(object sender, EventArgs e)
         {
-            // Show additional entries if charging to a department
-            FormData.ModifyAttribute("Charge to", radio_yr_10.Checked ? "Department" : "Personal balance");
+            FormData.ModifyAttribute("Phone Number", tb_phone.Text);
+        }
+
+        private void tb_bday_TextChanged(object sender, EventArgs e)
+        {
+            FormData.ModifyAttribute("Date of Birth", tb_bday.Text);
+        }
+
+        private void tb_reason_TextChanged(object sender, EventArgs e)
+        {
+            FormData.ModifyAttribute("Reason for Applying", tb_reason.Text);
+        }
+
+        private void yearlevel_CheckedChanged(object sender, EventArgs e)
+        {
+            RadioButton[] radios = { radio_yr_9, radio_yr_10, radio_yr_11, radio_yr_12, radio_yr_13 };
+            for (int i = 0; i < radios.Length; i++)
+            {
+                RadioButton button = radios[i];
+                if (button.Checked)
+                {
+                    FormData.ModifyAttribute("Year Level", (i + 9).ToString());
+                }
+            }
         }
 
         private void button_submit_Click(object sender, EventArgs e)

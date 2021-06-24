@@ -73,6 +73,7 @@ namespace AvcolForms.Pages
             // 
             this.tb_name.Cursor = System.Windows.Forms.Cursors.Default;
             this.tb_name.Location = new System.Drawing.Point(158, 293);
+            this.tb_name.MaxLength = 64;
             this.tb_name.Name = "tb_name";
             this.tb_name.Size = new System.Drawing.Size(171, 20);
             this.tb_name.TabIndex = 1;
@@ -92,11 +93,11 @@ namespace AvcolForms.Pages
             // 
             this.tb_homeroom.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.tb_homeroom.Location = new System.Drawing.Point(158, 461);
-            this.tb_homeroom.MaxLength = 3;
+            this.tb_homeroom.MaxLength = 5;
             this.tb_homeroom.Name = "tb_homeroom";
             this.tb_homeroom.Size = new System.Drawing.Size(71, 20);
             this.tb_homeroom.TabIndex = 6;
-            this.tb_homeroom.TextChanged += new System.EventHandler(this.staffcode_TextChanged);
+            this.tb_homeroom.TextChanged += new System.EventHandler(this.homeroom_TextChanged);
             // 
             // label_homeroom
             // 
@@ -118,7 +119,7 @@ namespace AvcolForms.Pages
             this.radio_yr_9.TabStop = true;
             this.radio_yr_9.Text = "Year 9";
             this.radio_yr_9.UseVisualStyleBackColor = true;
-            this.radio_yr_9.CheckedChanged += new System.EventHandler(this.chargeToPer_CheckedChanged);
+            this.radio_yr_9.CheckedChanged += new System.EventHandler(this.yearlevel_CheckedChanged);
             // 
             // radio_yr_10
             // 
@@ -130,7 +131,7 @@ namespace AvcolForms.Pages
             this.radio_yr_10.TabStop = true;
             this.radio_yr_10.Text = "Year 10";
             this.radio_yr_10.UseVisualStyleBackColor = true;
-            this.radio_yr_10.CheckedChanged += new System.EventHandler(this.chargeToDep_CheckedChanged);
+            this.radio_yr_10.CheckedChanged += new System.EventHandler(this.yearlevel_CheckedChanged);
             // 
             // group_yrlevel
             // 
@@ -157,6 +158,7 @@ namespace AvcolForms.Pages
             this.radio_yr_13.Text = "Year 13";
             this.radio_yr_13.UseMnemonic = false;
             this.radio_yr_13.UseVisualStyleBackColor = true;
+            this.radio_yr_13.CheckedChanged += new System.EventHandler(this.yearlevel_CheckedChanged);
             // 
             // radio_yr_12
             // 
@@ -169,6 +171,7 @@ namespace AvcolForms.Pages
             this.radio_yr_12.Text = "Year 12";
             this.radio_yr_12.UseMnemonic = false;
             this.radio_yr_12.UseVisualStyleBackColor = true;
+            this.radio_yr_12.CheckedChanged += new System.EventHandler(this.yearlevel_CheckedChanged);
             // 
             // radio_yr_11
             // 
@@ -181,6 +184,7 @@ namespace AvcolForms.Pages
             this.radio_yr_11.Text = "Year 11";
             this.radio_yr_11.UseMnemonic = false;
             this.radio_yr_11.UseVisualStyleBackColor = true;
+            this.radio_yr_11.CheckedChanged += new System.EventHandler(this.yearlevel_CheckedChanged);
             // 
             // label_surname
             // 
@@ -195,17 +199,18 @@ namespace AvcolForms.Pages
             // tb_lname
             // 
             this.tb_lname.Location = new System.Drawing.Point(158, 326);
+            this.tb_lname.MaxLength = 64;
             this.tb_lname.Name = "tb_lname";
             this.tb_lname.Size = new System.Drawing.Size(171, 20);
             this.tb_lname.TabIndex = 2;
-            this.tb_lname.TextChanged += new System.EventHandler(this.tb_department_TextChanged);
+            this.tb_lname.TextChanged += new System.EventHandler(this.lastname_TextChanged);
             // 
             // button_submit
             // 
             this.button_submit.Location = new System.Drawing.Point(357, 715);
             this.button_submit.Name = "button_submit";
             this.button_submit.Size = new System.Drawing.Size(75, 23);
-            this.button_submit.TabIndex = 12;
+            this.button_submit.TabIndex = 13;
             this.button_submit.Text = "Submit";
             this.button_submit.UseVisualStyleBackColor = true;
             this.button_submit.Click += new System.EventHandler(this.button_submit_Click);
@@ -235,9 +240,11 @@ namespace AvcolForms.Pages
             // 
             this.tb_email.Cursor = System.Windows.Forms.Cursors.Default;
             this.tb_email.Location = new System.Drawing.Point(158, 359);
+            this.tb_email.MaxLength = 64;
             this.tb_email.Name = "tb_email";
             this.tb_email.Size = new System.Drawing.Size(171, 20);
             this.tb_email.TabIndex = 3;
+            this.tb_email.TextChanged += new System.EventHandler(this.tb_email_TextChanged);
             // 
             // label_phone
             // 
@@ -257,6 +264,7 @@ namespace AvcolForms.Pages
             this.tb_phone.Name = "tb_phone";
             this.tb_phone.Size = new System.Drawing.Size(171, 20);
             this.tb_phone.TabIndex = 4;
+            this.tb_phone.TextChanged += new System.EventHandler(this.tb_phone_TextChanged);
             // 
             // label_bday
             // 
@@ -276,6 +284,7 @@ namespace AvcolForms.Pages
             this.tb_bday.Name = "tb_bday";
             this.tb_bday.Size = new System.Drawing.Size(93, 20);
             this.tb_bday.TabIndex = 5;
+            this.tb_bday.TextChanged += new System.EventHandler(this.tb_bday_TextChanged);
             // 
             // label_infotext
             // 
@@ -314,7 +323,8 @@ namespace AvcolForms.Pages
             this.tb_reason.Multiline = true;
             this.tb_reason.Name = "tb_reason";
             this.tb_reason.Size = new System.Drawing.Size(694, 149);
-            this.tb_reason.TabIndex = 24;
+            this.tb_reason.TabIndex = 12;
+            this.tb_reason.TextChanged += new System.EventHandler(this.tb_reason_TextChanged);
             // 
             // InnovationAcademyForm
             // 
