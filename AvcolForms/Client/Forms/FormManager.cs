@@ -14,6 +14,7 @@ namespace AvcolForms.Forms
         internal static ICollection<Type> _StudentForms = new List<Type>()
         {
             // Add type references to student forms here.
+            typeof(InnovationAcademyForm)
         };
 
         internal static ICollection<Type> _TeacherForms = new List<Type>()

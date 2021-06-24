@@ -111,6 +111,12 @@
     <Compile Include="Client\EmailFactory.cs" />
     <Compile Include="Client\Forms\FormData.cs" />
     <Compile Include="Client\Forms\FormManager.cs" />
+    <Compile Include="Pages\Forms\InnovationAcademyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\Forms\InnovationAcademyForm.Designer.cs">
+      <DependentUpon>InnovationAcademyForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pages\MainWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -131,6 +137,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Pages\Forms\InnovationAcademyForm.resx">
+      <DependentUpon>InnovationAcademyForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Pages\MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
       <SubType>Designer</SubType>
