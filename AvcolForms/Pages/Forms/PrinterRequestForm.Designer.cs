@@ -1,5 +1,5 @@
 ﻿
-namespace AvcolForms
+namespace AvcolForms.Pages
 {
     partial class PrinterRequestForm
     {

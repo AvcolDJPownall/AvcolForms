@@ -10,7 +10,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace AvcolForms
+namespace AvcolForms.Pages
 {
     public partial class PrinterRequestForm : Form
     {
