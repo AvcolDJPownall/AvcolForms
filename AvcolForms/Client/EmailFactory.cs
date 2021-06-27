@@ -18,18 +18,11 @@ namespace AvcolForms.Client
         {
             return "<style>\r\ntable, th, td {\r\n  border: 1px solid black;\r\n  border-collapse: collapse;\r\n}\r\nth, td {\r\n  padding: 4px;\r\n  text-align: left;    \r\n}\r\n</style>";
         }
-        public static void SendToDepartment(string address, FormData form, MemoryStream attachment) // Temporary function for testing purposes
+        public static void SendToDepartments(FormData form, MemoryStream attachment)
         {
-            string[] dep_array = { address };
-            SendToDepartments(dep_array, form, attachment);
-        }
-        public static void SendToDepartments(string[] addresses, FormData form, MemoryStream attachment)
-        {
-
-            // User credentials
             try
             {
-                string from_address = "";
+                string from_address = "avondaleforms@gmail.com";
                 string authpassword = Encoding.UTF8.GetString(Convert.FromBase64String("")); // This obviously won't be defined in plain text, .NET is far too easy to decompile
 
                 // Define SMTP Server parameters
@@ -42,7 +35,7 @@ namespace AvcolForms.Client
 
                 // Construct message
                 MailMessage message = new MailMessage();
-                foreach (string to_usr in addresses) message.To.Add(to_usr);
+                foreach (string to_usr in form.Recipients) message.To.Add(to_usr);
                 message.From = new MailAddress(from_address);
                 message.Subject = "Form Submission - " + form.Name;
 
@@ -69,13 +62,10 @@ namespace AvcolForms.Client
             catch (Exception error)
             {
                 string message = error.Message; // Default 'generic' error text
-
                 if (error is SmtpException) message = "Unable to connect to the mail server. Check that you are connected to the internet.";
                 if (error is SmtpFailedRecipientException) message = "One or more recipients failed to receive the form data.";
 
-
                 MessageBox.Show("An error occured sending your submission:\n" + message, "Error");
-                throw;
             }
         }
     }

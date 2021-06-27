@@ -19,9 +19,11 @@ namespace AvcolForms.Pages
         public InnovationAcademyForm()
         {
             InitializeComponent();
-            FormData = new FormData(this);
 
-            string[] req_fields = { "First Name", "Last Name", "Email", "Home Room", "Year Level" };
+            string[] req_fields = { "First Name", "Last Name", "Email", "Home Room", "Year Level" }; // Fields that must be filled before submitting.
+            string[] recipients = { "ac107151@avcol.school.nz" }; // List of addresses to carbon-copy to.
+            FormData = new FormData(this, recipients);
+
             RequiredKeys.AddRange(req_fields);
         }
 
@@ -80,7 +82,7 @@ namespace AvcolForms.Pages
             if (!RequiredKeys.Any() || RequiredKeys.All(field => data.ContainsKey(field)))
             {
                 error_text.Text = "";
-                EmailFactory.SendToDepartment("ac107151@avcol.school.nz", FormData, DataExporter.ExportToTxtFile(FormData));
+                EmailFactory.SendToDepartments(FormData, DataExporter.ExportToTxtFile(FormData));
             }
             else
             {

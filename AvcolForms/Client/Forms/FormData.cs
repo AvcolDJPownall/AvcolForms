@@ -14,6 +14,7 @@ namespace AvcolForms.Client
     {
         public Dictionary<string, string> FormattedData;
         public string Name;
+        public string[] Recipients = { };
 
         public void ModifyAttribute(string key, string value)
         {
@@ -25,9 +26,10 @@ namespace AvcolForms.Client
             if (value == "") FormattedData.Remove(key);
         }
 
-        public FormData(Form form)
+        public FormData(Form form, string[] addresses)
         {
             FormattedData = new Dictionary<string, string>();
+            this.Recipients = addresses;
             this.Name = form.Name;
         }
     }

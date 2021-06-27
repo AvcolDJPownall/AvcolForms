@@ -19,9 +19,11 @@ namespace AvcolForms.Pages
         public PrinterRequestForm()
         {
             InitializeComponent();
-            FormData = new FormData(this);
 
             string[] req_fields = { "Name", "Staff Code", "Department", "Charge to" };
+            string[] recipients = { "ac107151@avcol.school.nz" };
+            FormData = new FormData(this, recipients);
+
             RequiredKeys.AddRange(req_fields);
         }
 
@@ -59,7 +61,7 @@ namespace AvcolForms.Pages
             if (!RequiredKeys.Any() || RequiredKeys.All(field => data.ContainsKey(field)))
             {
                 error_text.Text = "";
-                EmailFactory.SendToDepartment("ac107151@avcol.school.nz", FormData, DataExporter.ExportToTxtFile(FormData));
+                EmailFactory.SendToDepartments(FormData, DataExporter.ExportToTxtFile(FormData));
             }
             else
             {
