@@ -10,17 +10,18 @@ namespace AvcolForms.Forms
 {
     class FormManager
     {
-
         internal static ICollection<Type> _StudentForms = new List<Type>()
         {
             // Add type references to student forms here.
-            typeof(InnovationAcademyForm)
+            typeof(InnovationAcademyForm),
+            typeof(PropertyServiceRequest)
         };
 
         internal static ICollection<Type> _TeacherForms = new List<Type>()
         {
             // Add type references to teacher forms here.
-            typeof(PrinterRequestForm)
+            typeof(PrinterRequestForm),
+            typeof(PropertyServiceRequest)
         };
 
         public static List<Type> GetUserForms(FormBrowser.AccountType usertype)
