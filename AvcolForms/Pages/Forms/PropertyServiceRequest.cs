@@ -20,7 +20,7 @@ namespace AvcolForms.Pages
         {
             InitializeComponent();
 
-            string[] req_fields = { "Name", "Email", "Phone Number", "Topic", "Summary", "Details" }; // Fields that must be filled before submitting.
+            string[] req_fields = { "Name", "Email", "Phone", "Topic", "Summary", "Details" }; // Fields that must be filled before submitting.
             string[] recipients = { "ac107151@avcol.school.nz" }; // List of addresses to carbon-copy to.
             FormData = new FormData(this, recipients);
 
@@ -39,12 +39,12 @@ namespace AvcolForms.Pages
 
         private void tb_phone_TextChanged(object sender, EventArgs e)
         {
-            FormData.ModifyAttribute("Phone Number", tb_phone.Text);
+            FormData.ModifyAttribute("Phone", tb_phone.Text);
         }
 
         private void tb_subject_TextChanged(object sender, EventArgs e)
         {
-            FormData.ModifyAttribute("Summary", tb_reason.Text);
+            FormData.ModifyAttribute("Summary", tb_subject.Text);
         }
 
         private void tb_reason_TextChanged(object sender, EventArgs e)
