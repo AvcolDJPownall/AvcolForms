@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AvcolForms.Pages;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
@@ -7,6 +8,7 @@ using System.Net;
 using System.Net.Mail;
 using System.Reflection;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace AvcolForms.Client
@@ -20,10 +22,12 @@ namespace AvcolForms.Client
         }
         public static void SendToDepartments(FormData form, MemoryStream attachment)
         {
+            bool hasError = false;
+            LoadingWindow loadingBar = new LoadingWindow();
             try
             {
                 string from_address = "avondaleforms@gmail.com";
-                string authpassword = Encoding.UTF8.GetString(Convert.FromBase64String("")); // This obviously won't be defined in plain text, .NET is far too easy to decompile
+                string authpassword = Encoding.UTF8.GetString(Convert.FromBase64String("QXZjb2xGb3JtczEyMw==")); // This obviously won't be defined in plain text, .NET is far too easy to decompile
 
                 // Define SMTP Server parameters
                 // These are placeholders, currently waiting on approval from the IT department
@@ -56,8 +60,9 @@ namespace AvcolForms.Client
                 string filename = form.Name + from_address.Replace("@avcol.school.nz", "_") + ".txt";
                 message.Attachments.Add(new Attachment(attachment, filename));
 
+                Task.Run(() => loadingBar.ShowDialog());
                 smtpClient.Send(message);
-                attachment.Close();
+                
             }
             catch (Exception error)
             {
@@ -65,7 +70,14 @@ namespace AvcolForms.Client
                 if (error is SmtpException) message = "Unable to connect to the mail server. Check that you are connected to the internet.";
                 if (error is SmtpFailedRecipientException) message = "One or more recipients failed to receive the form data.";
 
-                MessageBox.Show("An error occured sending your submission:\n" + message, "Error");
+                hasError = true;
+
+                loadingBar.ShowMessage("An error occured sending your submission:\n" + message, true);
+            }
+            finally
+            {
+                if (!hasError) loadingBar.ShowMessage("Upload complete.", false);
+                Application.Restart();
             }
         }
     }
