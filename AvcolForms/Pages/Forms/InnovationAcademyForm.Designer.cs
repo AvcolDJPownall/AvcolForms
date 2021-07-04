@@ -352,7 +352,6 @@ namespace AvcolForms.Pages
             this.Controls.Add(this.tb_name);
             this.Controls.Add(this.label_title);
             this.Name = "InnovationAcademyForm";
-            this.TopMost = true;
             this.group_yrlevel.ResumeLayout(false);
             this.group_yrlevel.PerformLayout();
             this.ResumeLayout(false);
