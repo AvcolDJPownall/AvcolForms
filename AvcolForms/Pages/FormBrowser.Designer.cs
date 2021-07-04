@@ -91,7 +91,6 @@ namespace AvcolForms.Pages
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Avcol Forms - Browser";
-            this.TopMost = true;
             this.Load += new System.EventHandler(this.FormBrowser_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
