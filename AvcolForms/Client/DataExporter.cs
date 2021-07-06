@@ -45,7 +45,7 @@ namespace AvcolForms.Client
 
             // Heading + title
             total += data.Name;
-            total += "\nRecorded " + formData.Count() + " values for user " + "ac000000";
+            total += "\nRecorded " + formData.Count() + " values for user " + FormData.EmailPrefix;
             total += "\n---------------------------------------\n";
 
             // Form data

@@ -13,6 +13,7 @@ namespace AvcolForms.Client
     public class FormData
     {
         public Dictionary<string, string> FormattedData;
+        public static string EmailPrefix = "";
         public string Name;
         public string[] Recipients = { };
 

@@ -57,7 +57,7 @@ namespace AvcolForms.Client
                 message.Body += DataExporter.GenerateHTMLTable(form);
 
                 // Attach text file
-                string filename = form.Name + from_address.Replace("@avcol.school.nz", "_") + ".txt";
+                string filename = form.Name + "_" + FormData.EmailPrefix + ".txt";
                 message.Attachments.Add(new Attachment(attachment, filename));
 
                 Task.Run(() => loadingBar.ShowDialog());

@@ -29,10 +29,12 @@ namespace AvcolForms.Pages
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Avaliable Forms");
+            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("Avaliable Forms");
             this.form_treelist = new System.Windows.Forms.TreeView();
             this.btn_back = new System.Windows.Forms.Button();
             this.label_title = new System.Windows.Forms.Label();
+            this.tb_accountprefix = new System.Windows.Forms.TextBox();
+            this.label_email = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // form_treelist
@@ -44,10 +46,10 @@ namespace AvcolForms.Pages
             this.form_treelist.ItemHeight = 20;
             this.form_treelist.Location = new System.Drawing.Point(78, 123);
             this.form_treelist.Name = "form_treelist";
-            treeNode1.Name = "ph_text";
-            treeNode1.Text = "Avaliable Forms";
+            treeNode9.Name = "ph_text";
+            treeNode9.Text = "Avaliable Forms";
             this.form_treelist.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode1});
+            treeNode9});
             this.form_treelist.ShowRootLines = false;
             this.form_treelist.Size = new System.Drawing.Size(409, 249);
             this.form_treelist.TabIndex = 0;
@@ -74,12 +76,33 @@ namespace AvcolForms.Pages
             this.label_title.Text = "Form Browser";
             this.label_title.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // tb_accountprefix
+            // 
+            this.tb_accountprefix.Location = new System.Drawing.Point(520, 207);
+            this.tb_accountprefix.MaxLength = 8;
+            this.tb_accountprefix.Name = "tb_accountprefix";
+            this.tb_accountprefix.Size = new System.Drawing.Size(123, 20);
+            this.tb_accountprefix.TabIndex = 3;
+            this.tb_accountprefix.TextChanged += new System.EventHandler(this.tb_accountprefix_TextChanged);
+            // 
+            // label_email
+            // 
+            this.label_email.AutoSize = true;
+            this.label_email.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
+            this.label_email.Location = new System.Drawing.Point(516, 183);
+            this.label_email.Name = "label_email";
+            this.label_email.Size = new System.Drawing.Size(99, 21);
+            this.label_email.TabIndex = 4;
+            this.label_email.Text = "Email Prefix";
+            // 
             // FormBrowser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label_email);
+            this.Controls.Add(this.tb_accountprefix);
             this.Controls.Add(this.label_title);
             this.Controls.Add(this.btn_back);
             this.Controls.Add(this.form_treelist);
@@ -102,5 +125,7 @@ namespace AvcolForms.Pages
         private System.Windows.Forms.TreeView form_treelist;
         private System.Windows.Forms.Button btn_back;
         private System.Windows.Forms.Label label_title;
+        private System.Windows.Forms.TextBox tb_accountprefix;
+        private System.Windows.Forms.Label label_email;
     }
 }
