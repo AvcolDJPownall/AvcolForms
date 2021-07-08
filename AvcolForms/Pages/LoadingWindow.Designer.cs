@@ -61,6 +61,8 @@ namespace AvcolForms.Pages
             this.ControlBox = false;
             this.Controls.Add(this.text_sending);
             this.Controls.Add(this.loadingbar);
+            this.MaximumSize = new System.Drawing.Size(364, 119);
+            this.MinimumSize = new System.Drawing.Size(364, 119);
             this.Name = "LoadingWindow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sending...";
