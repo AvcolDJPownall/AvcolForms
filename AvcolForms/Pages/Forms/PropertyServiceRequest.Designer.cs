@@ -116,7 +116,7 @@ namespace AvcolForms.Pages
             this.group_topic.Controls.Add(this.radio_topic_general);
             this.group_topic.Controls.Add(this.radio_topic_feedback);
             this.group_topic.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
-            this.group_topic.Location = new System.Drawing.Point(394, 284);
+            this.group_topic.Location = new System.Drawing.Point(50, 564);
             this.group_topic.Name = "group_topic";
             this.group_topic.Size = new System.Drawing.Size(173, 140);
             this.group_topic.TabIndex = 4;
@@ -151,7 +151,7 @@ namespace AvcolForms.Pages
             // 
             // button_submit
             // 
-            this.button_submit.Location = new System.Drawing.Point(357, 715);
+            this.button_submit.Location = new System.Drawing.Point(357, 1027);
             this.button_submit.Name = "button_submit";
             this.button_submit.Size = new System.Drawing.Size(75, 23);
             this.button_submit.TabIndex = 7;
@@ -165,7 +165,7 @@ namespace AvcolForms.Pages
             this.error_text.BackColor = System.Drawing.SystemColors.Control;
             this.error_text.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.error_text.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.error_text.Location = new System.Drawing.Point(474, 715);
+            this.error_text.Location = new System.Drawing.Point(474, 1027);
             this.error_text.Name = "error_text";
             this.error_text.Size = new System.Drawing.Size(0, 20);
             this.error_text.TabIndex = 13;
@@ -174,7 +174,7 @@ namespace AvcolForms.Pages
             // 
             this.label_email.AutoSize = true;
             this.label_email.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
-            this.label_email.Location = new System.Drawing.Point(46, 319);
+            this.label_email.Location = new System.Drawing.Point(46, 334);
             this.label_email.Name = "label_email";
             this.label_email.Size = new System.Drawing.Size(51, 21);
             this.label_email.TabIndex = 15;
@@ -183,7 +183,7 @@ namespace AvcolForms.Pages
             // tb_email
             // 
             this.tb_email.Cursor = System.Windows.Forms.Cursors.Default;
-            this.tb_email.Location = new System.Drawing.Point(158, 319);
+            this.tb_email.Location = new System.Drawing.Point(158, 334);
             this.tb_email.MaxLength = 64;
             this.tb_email.Name = "tb_email";
             this.tb_email.Size = new System.Drawing.Size(171, 20);
@@ -194,7 +194,7 @@ namespace AvcolForms.Pages
             // 
             this.label_phone.AutoSize = true;
             this.label_phone.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
-            this.label_phone.Location = new System.Drawing.Point(46, 353);
+            this.label_phone.Location = new System.Drawing.Point(46, 383);
             this.label_phone.Name = "label_phone";
             this.label_phone.Size = new System.Drawing.Size(59, 21);
             this.label_phone.TabIndex = 17;
@@ -203,7 +203,7 @@ namespace AvcolForms.Pages
             // tb_phone
             // 
             this.tb_phone.Cursor = System.Windows.Forms.Cursors.Default;
-            this.tb_phone.Location = new System.Drawing.Point(158, 353);
+            this.tb_phone.Location = new System.Drawing.Point(158, 383);
             this.tb_phone.MaxLength = 16;
             this.tb_phone.Name = "tb_phone";
             this.tb_phone.Size = new System.Drawing.Size(171, 20);
@@ -235,7 +235,7 @@ namespace AvcolForms.Pages
             // 
             this.label_reason.AutoSize = true;
             this.label_reason.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_reason.Location = new System.Drawing.Point(45, 507);
+            this.label_reason.Location = new System.Drawing.Point(45, 819);
             this.label_reason.Name = "label_reason";
             this.label_reason.Size = new System.Drawing.Size(246, 21);
             this.label_reason.TabIndex = 23;
@@ -243,7 +243,7 @@ namespace AvcolForms.Pages
             // 
             // tb_reason
             // 
-            this.tb_reason.Location = new System.Drawing.Point(49, 544);
+            this.tb_reason.Location = new System.Drawing.Point(49, 856);
             this.tb_reason.Multiline = true;
             this.tb_reason.Name = "tb_reason";
             this.tb_reason.Size = new System.Drawing.Size(694, 149);
@@ -253,7 +253,7 @@ namespace AvcolForms.Pages
             // tb_subject
             // 
             this.tb_subject.Cursor = System.Windows.Forms.Cursors.Default;
-            this.tb_subject.Location = new System.Drawing.Point(50, 434);
+            this.tb_subject.Location = new System.Drawing.Point(50, 490);
             this.tb_subject.MaxLength = 64;
             this.tb_subject.Name = "tb_subject";
             this.tb_subject.Size = new System.Drawing.Size(279, 20);
@@ -264,7 +264,7 @@ namespace AvcolForms.Pages
             // 
             this.label_subject.AutoSize = true;
             this.label_subject.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
-            this.label_subject.Location = new System.Drawing.Point(46, 403);
+            this.label_subject.Location = new System.Drawing.Point(46, 459);
             this.label_subject.Name = "label_subject";
             this.label_subject.Size = new System.Drawing.Size(70, 21);
             this.label_subject.TabIndex = 25;
@@ -274,7 +274,7 @@ namespace AvcolForms.Pages
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(788, 768);
+            this.ClientSize = new System.Drawing.Size(788, 1114);
             this.Controls.Add(this.label_subject);
             this.Controls.Add(this.tb_subject);
             this.Controls.Add(this.tb_reason);
@@ -291,8 +291,7 @@ namespace AvcolForms.Pages
             this.Controls.Add(this.label_name);
             this.Controls.Add(this.tb_name);
             this.Controls.Add(this.label_title);
-            this.MaximumSize = new System.Drawing.Size(804, 807);
-            this.MinimumSize = new System.Drawing.Size(804, 807);
+            this.MaximumSize = new System.Drawing.Size(804, 1153);
             this.Name = "PropertyServiceRequest";
             this.group_topic.ResumeLayout(false);
             this.group_topic.PerformLayout();

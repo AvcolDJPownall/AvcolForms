@@ -92,7 +92,7 @@ namespace AvcolForms.Pages
             // tb_homeroom
             // 
             this.tb_homeroom.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.tb_homeroom.Location = new System.Drawing.Point(158, 461);
+            this.tb_homeroom.Location = new System.Drawing.Point(158, 532);
             this.tb_homeroom.MaxLength = 5;
             this.tb_homeroom.Name = "tb_homeroom";
             this.tb_homeroom.Size = new System.Drawing.Size(71, 20);
@@ -103,7 +103,7 @@ namespace AvcolForms.Pages
             // 
             this.label_homeroom.AutoSize = true;
             this.label_homeroom.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_homeroom.Location = new System.Drawing.Point(46, 461);
+            this.label_homeroom.Location = new System.Drawing.Point(45, 532);
             this.label_homeroom.Name = "label_homeroom";
             this.label_homeroom.Size = new System.Drawing.Size(106, 21);
             this.label_homeroom.TabIndex = 5;
@@ -112,7 +112,8 @@ namespace AvcolForms.Pages
             // radio_yr_9
             // 
             this.radio_yr_9.AutoSize = true;
-            this.radio_yr_9.Location = new System.Drawing.Point(6, 19);
+            this.radio_yr_9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.radio_yr_9.Location = new System.Drawing.Point(6, 30);
             this.radio_yr_9.Name = "radio_yr_9";
             this.radio_yr_9.Size = new System.Drawing.Size(56, 17);
             this.radio_yr_9.TabIndex = 7;
@@ -124,7 +125,8 @@ namespace AvcolForms.Pages
             // radio_yr_10
             // 
             this.radio_yr_10.AutoSize = true;
-            this.radio_yr_10.Location = new System.Drawing.Point(6, 42);
+            this.radio_yr_10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.radio_yr_10.Location = new System.Drawing.Point(6, 58);
             this.radio_yr_10.Name = "radio_yr_10";
             this.radio_yr_10.Size = new System.Drawing.Size(62, 17);
             this.radio_yr_10.TabIndex = 8;
@@ -140,9 +142,10 @@ namespace AvcolForms.Pages
             this.group_yrlevel.Controls.Add(this.radio_yr_11);
             this.group_yrlevel.Controls.Add(this.radio_yr_10);
             this.group_yrlevel.Controls.Add(this.radio_yr_9);
-            this.group_yrlevel.Location = new System.Drawing.Point(402, 293);
+            this.group_yrlevel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.group_yrlevel.Location = new System.Drawing.Point(53, 579);
             this.group_yrlevel.Name = "group_yrlevel";
-            this.group_yrlevel.Size = new System.Drawing.Size(86, 141);
+            this.group_yrlevel.Size = new System.Drawing.Size(98, 178);
             this.group_yrlevel.TabIndex = 8;
             this.group_yrlevel.TabStop = false;
             this.group_yrlevel.Text = "Year Level";
@@ -150,7 +153,8 @@ namespace AvcolForms.Pages
             // radio_yr_13
             // 
             this.radio_yr_13.AutoSize = true;
-            this.radio_yr_13.Location = new System.Drawing.Point(6, 111);
+            this.radio_yr_13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.radio_yr_13.Location = new System.Drawing.Point(6, 139);
             this.radio_yr_13.Name = "radio_yr_13";
             this.radio_yr_13.Size = new System.Drawing.Size(62, 17);
             this.radio_yr_13.TabIndex = 11;
@@ -163,7 +167,8 @@ namespace AvcolForms.Pages
             // radio_yr_12
             // 
             this.radio_yr_12.AutoSize = true;
-            this.radio_yr_12.Location = new System.Drawing.Point(6, 88);
+            this.radio_yr_12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.radio_yr_12.Location = new System.Drawing.Point(6, 112);
             this.radio_yr_12.Name = "radio_yr_12";
             this.radio_yr_12.Size = new System.Drawing.Size(62, 17);
             this.radio_yr_12.TabIndex = 10;
@@ -176,7 +181,8 @@ namespace AvcolForms.Pages
             // radio_yr_11
             // 
             this.radio_yr_11.AutoSize = true;
-            this.radio_yr_11.Location = new System.Drawing.Point(6, 65);
+            this.radio_yr_11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.radio_yr_11.Location = new System.Drawing.Point(6, 86);
             this.radio_yr_11.Name = "radio_yr_11";
             this.radio_yr_11.Size = new System.Drawing.Size(62, 17);
             this.radio_yr_11.TabIndex = 9;
@@ -190,7 +196,7 @@ namespace AvcolForms.Pages
             // 
             this.label_surname.AutoSize = true;
             this.label_surname.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
-            this.label_surname.Location = new System.Drawing.Point(46, 326);
+            this.label_surname.Location = new System.Drawing.Point(45, 342);
             this.label_surname.Name = "label_surname";
             this.label_surname.Size = new System.Drawing.Size(78, 21);
             this.label_surname.TabIndex = 11;
@@ -198,7 +204,7 @@ namespace AvcolForms.Pages
             // 
             // tb_lname
             // 
-            this.tb_lname.Location = new System.Drawing.Point(158, 326);
+            this.tb_lname.Location = new System.Drawing.Point(158, 342);
             this.tb_lname.MaxLength = 64;
             this.tb_lname.Name = "tb_lname";
             this.tb_lname.Size = new System.Drawing.Size(171, 20);
@@ -207,7 +213,7 @@ namespace AvcolForms.Pages
             // 
             // button_submit
             // 
-            this.button_submit.Location = new System.Drawing.Point(357, 715);
+            this.button_submit.Location = new System.Drawing.Point(357, 1009);
             this.button_submit.Name = "button_submit";
             this.button_submit.Size = new System.Drawing.Size(75, 23);
             this.button_submit.TabIndex = 13;
@@ -221,7 +227,7 @@ namespace AvcolForms.Pages
             this.error_text.BackColor = System.Drawing.SystemColors.Control;
             this.error_text.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.error_text.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.error_text.Location = new System.Drawing.Point(474, 715);
+            this.error_text.Location = new System.Drawing.Point(474, 1009);
             this.error_text.Name = "error_text";
             this.error_text.Size = new System.Drawing.Size(0, 20);
             this.error_text.TabIndex = 13;
@@ -230,7 +236,7 @@ namespace AvcolForms.Pages
             // 
             this.label_email.AutoSize = true;
             this.label_email.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
-            this.label_email.Location = new System.Drawing.Point(46, 359);
+            this.label_email.Location = new System.Drawing.Point(46, 393);
             this.label_email.Name = "label_email";
             this.label_email.Size = new System.Drawing.Size(51, 21);
             this.label_email.TabIndex = 15;
@@ -239,7 +245,7 @@ namespace AvcolForms.Pages
             // tb_email
             // 
             this.tb_email.Cursor = System.Windows.Forms.Cursors.Default;
-            this.tb_email.Location = new System.Drawing.Point(158, 359);
+            this.tb_email.Location = new System.Drawing.Point(158, 393);
             this.tb_email.MaxLength = 64;
             this.tb_email.Name = "tb_email";
             this.tb_email.Size = new System.Drawing.Size(171, 20);
@@ -250,7 +256,7 @@ namespace AvcolForms.Pages
             // 
             this.label_phone.AutoSize = true;
             this.label_phone.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
-            this.label_phone.Location = new System.Drawing.Point(46, 393);
+            this.label_phone.Location = new System.Drawing.Point(46, 436);
             this.label_phone.Name = "label_phone";
             this.label_phone.Size = new System.Drawing.Size(59, 21);
             this.label_phone.TabIndex = 17;
@@ -259,7 +265,7 @@ namespace AvcolForms.Pages
             // tb_phone
             // 
             this.tb_phone.Cursor = System.Windows.Forms.Cursors.Default;
-            this.tb_phone.Location = new System.Drawing.Point(158, 393);
+            this.tb_phone.Location = new System.Drawing.Point(158, 439);
             this.tb_phone.MaxLength = 16;
             this.tb_phone.Name = "tb_phone";
             this.tb_phone.Size = new System.Drawing.Size(171, 20);
@@ -270,7 +276,7 @@ namespace AvcolForms.Pages
             // 
             this.label_bday.AutoSize = true;
             this.label_bday.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
-            this.label_bday.Location = new System.Drawing.Point(46, 427);
+            this.label_bday.Location = new System.Drawing.Point(46, 484);
             this.label_bday.Name = "label_bday";
             this.label_bday.Size = new System.Drawing.Size(73, 21);
             this.label_bday.TabIndex = 19;
@@ -279,7 +285,7 @@ namespace AvcolForms.Pages
             // tb_bday
             // 
             this.tb_bday.Cursor = System.Windows.Forms.Cursors.Default;
-            this.tb_bday.Location = new System.Drawing.Point(158, 427);
+            this.tb_bday.Location = new System.Drawing.Point(158, 484);
             this.tb_bday.MaxLength = 12;
             this.tb_bday.Name = "tb_bday";
             this.tb_bday.Size = new System.Drawing.Size(93, 20);
@@ -311,7 +317,7 @@ namespace AvcolForms.Pages
             // 
             this.label_reason.AutoSize = true;
             this.label_reason.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_reason.Location = new System.Drawing.Point(45, 507);
+            this.label_reason.Location = new System.Drawing.Point(45, 801);
             this.label_reason.Name = "label_reason";
             this.label_reason.Size = new System.Drawing.Size(396, 21);
             this.label_reason.TabIndex = 23;
@@ -319,7 +325,7 @@ namespace AvcolForms.Pages
             // 
             // tb_reason
             // 
-            this.tb_reason.Location = new System.Drawing.Point(49, 544);
+            this.tb_reason.Location = new System.Drawing.Point(49, 838);
             this.tb_reason.Multiline = true;
             this.tb_reason.Name = "tb_reason";
             this.tb_reason.Size = new System.Drawing.Size(694, 149);
@@ -330,7 +336,7 @@ namespace AvcolForms.Pages
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(788, 768);
+            this.ClientSize = new System.Drawing.Size(788, 1114);
             this.Controls.Add(this.tb_reason);
             this.Controls.Add(this.label_reason);
             this.Controls.Add(this.label_reg);
